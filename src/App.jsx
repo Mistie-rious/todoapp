@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import left from './assets/arrowleft.png'
 import right from './assets/arrowright.png'
 
@@ -8,11 +8,19 @@ import Todolist from './Todolist'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState(() => {
+    const localValue = localStorage.getItem("ITEMS")
+    if (localValue == null) return []
+    return JSON.parse(localValue)
+  })
+  useEffect(() => {
+    localStorage.setItem("ITEMS", JSON.stringify(todos))
+  }, [todos])
 
   return (
     <>
-   <div className='flex h-screen justify-center bg-background items-center'>
-  <div className='bg-white w-1/3 h-700 px-10 py-10 rounded-xl text-center'>
+   <div className='flex min-h-screen justify-center max-h-fit bg-background items-center'>
+  <div className='bg-white w-fit h-fit px-10 py-10 rounded-3xl text-center'>
     <div className="flex justify-around">
     
     <div className='flex flex-col'>
@@ -23,7 +31,7 @@ function App() {
       
     </div>
    
-    <Todoform/>
+    <Todoform todos={todos} setTodos={setTodos}/>
 
  
   </div>

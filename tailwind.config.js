@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#E5E4E2',
-        bluetext: '#1B4965'
+        background: '#8C92AC',
+        bluetext: '#E6E6FA',
+        button: '#91A3B0'
       }
     },
   },
