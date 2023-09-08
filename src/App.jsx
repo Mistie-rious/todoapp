@@ -9,7 +9,7 @@ import Todolist from './Todolist'
 function App() {
   const [count, setCount] = useState(0)
     const currentDate = moment();
-    const formattedDate = currentDate.format('MMMM Do YYYY, h:mm:ss a');
+    const formattedDate = currentDate.format('MMMM Do YYYY');
  
 
   const [todos, setTodos] = useState(() => {
