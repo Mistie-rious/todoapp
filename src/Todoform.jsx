@@ -24,7 +24,7 @@ function Todoform({todos,setTodos}) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-           <div className='flex justify-between mb-5 ' >
+           <div className='flex justify-between ' >
     
       <input type='text' placeholder='Add a new task...' value={task} onChange={(e) => setTask(e.target.value)} className='bg-slate-500 text-white w-fit px-1 mr-6'></input>
       <button className='bg-button px-3  text-white' >Add new</button>

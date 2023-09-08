@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         background: '#8C92AC',
-        bluetext: '#E6E6FA',
+        bluetext: '#32127A',
         button: '#91A3B0'
       }
     },
