@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react'
 import left from './assets/arrowleft.png'
 import right from './assets/arrowright.png'
-
+import moment from 'moment';
 import './App.css'
 import Todoform from './Todoform'
 import Todolist from './Todolist'
 
 function App() {
   const [count, setCount] = useState(0)
+    const currentDate = moment();
+    const formattedDate = currentDate.format('MMMM Do YYYY, h:mm:ss a');
+ 
+
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS")
     if (localValue == null) return []
@@ -24,8 +28,8 @@ function App() {
     <div className="flex justify-around">
     
     <div className='flex flex-col'>
-      <h1 className='text-bluetext font-semibold'>MONDAY,</h1>
-      <div className='text-bluetext mb-6' >31st September</div>
+      <h1 className='text-bluetext font-semibold'>To Do List</h1>
+      <div className='text-bluetext mb-6' >{formattedDate}</div>
       
       </div>
       
