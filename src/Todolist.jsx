@@ -26,7 +26,7 @@ function Todolist({setTodos, todos}) {
     <div>
       {todos.length === 0 && "No Todos" }
       {todos.map((todo) => (
-        <li key={todo.id} className='flex my-7 text-white bg-background rounded-lg py-2 mb-1'> 
+        <li key={todo.id} className='flex my-4 text-white bg-background rounded-lg py-2 mb-1'> 
         {/* 
 <div onClick={() => completetask(todo.id)} className='w-5 h-5 rounded-full border-blue-200 border'></div>
 */}
